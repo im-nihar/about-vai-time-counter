@@ -129,7 +129,7 @@ export default function Timer() {
 
     return (
       <div className="image-container" onClick={onClick}>
-        <img className="fit-picture" src={img} alt="Her" />
+        <img className="fit-picture" src={"src/assets/image_1.jpeg"} alt="Her" />
       </div>
     );
   }
