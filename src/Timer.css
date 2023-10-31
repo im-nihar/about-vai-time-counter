@@ -1,0 +1,39 @@
+:root {
+  --black: #222222;
+  --white: #ffffff;
+}
+
+.theme-dark {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.theme-dark {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.main-container {
+  /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+  /* margin: 0 60px; */
+}
+
+.element {
+  margin-right: 10px;
+  font-size: 2em;
+  padding: 10px 0;
+}
+
+@media screen and (min-width: 90ch) {
+  .main-container {
+    margin: 0 60px;
+    display: flex;
+  }
+  h1 {
+    margin: 0 60px;
+  }
+}
