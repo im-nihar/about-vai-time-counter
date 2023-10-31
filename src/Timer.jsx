@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Timer.css";
 import confetti from "canvas-confetti";
+import userImage from "/public/image_1.jpeg";
 
 export default function Timer() {
   const [time, setTime] = useState(null);
@@ -113,7 +114,7 @@ export default function Timer() {
   }
 
   function renderImage() {
-    const img = "public/image_1.jpeg";
+    const img = userImage;
     function onClick() {
       confetti({
         particleCount: 100,
@@ -140,7 +141,7 @@ export default function Timer() {
 
   return (
     <div>
-        {renderConfetti()}
+      {renderConfetti()}
       {time ? (
         <>
           <h1>{timeOfDay ? timeOfDay + "!" : null}</h1>
