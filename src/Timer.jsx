@@ -113,7 +113,7 @@ export default function Timer() {
   }
 
   function renderImage() {
-    const img = "src/assets/image_1.jpeg";
+    const img = "public/image_1.jpeg";
     function onClick() {
       confetti({
         particleCount: 100,
@@ -129,7 +129,7 @@ export default function Timer() {
 
     return (
       <div className="image-container" onClick={onClick}>
-        <img className="fit-picture" src={"src/assets/image_1.jpeg"} alt="Her" />
+        <img className="fit-picture" src={img} alt="Her" />
       </div>
     );
   }
