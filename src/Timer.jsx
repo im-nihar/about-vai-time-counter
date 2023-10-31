@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Timer.css";
+import confetti from "canvas-confetti";
 
 export default function Timer() {
   const [time, setTime] = useState(null);
@@ -81,6 +82,19 @@ export default function Timer() {
     setTimeOfDay(timeOfDay);
   }
 
+  function renderConfetti() {
+    // confetti({
+    //   particleCount: 1,
+    //   startVelocity: 5,
+    //   spread: 360,
+    //   origin: {
+    //     x: Math.random(),
+    //     // since they fall down, start a bit higher than random
+    //     y: Math.random() - 0.2,
+    //   },
+    // });
+  }
+
   useEffect(() => {
     const interval = setInterval(() => doStuff(), 1000);
     return () => {
@@ -88,12 +102,45 @@ export default function Timer() {
     };
   }, []);
 
+  function renderNotes() {
+    return (
+      <div>
+        <p>But who's counting...</p>
+        <p>Keep Smiling</p>
+        <p>Always</p>
+      </div>
+    );
+  }
+
+  function renderImage() {
+    const img = "src/assets/image_1.jpeg";
+    function onClick() {
+      confetti({
+        particleCount: 100,
+        startVelocity: 30,
+        spread: 360,
+        origin: {
+          x: Math.random(),
+          // since they fall down, start a bit higher than random
+          y: Math.random() - 0.2,
+        },
+      });
+    }
+
+    return (
+      <div className="image-container" onClick={onClick}>
+        <img className="fit-picture" src={img} alt="Her" />
+      </div>
+    );
+  }
+
   useEffect(() => {
     document.body.className = "theme-" + theme;
   }, [theme]);
 
   return (
     <div>
+        {renderConfetti()}
       {time ? (
         <>
           <h1>{timeOfDay ? timeOfDay + "!" : null}</h1>
@@ -113,6 +160,8 @@ export default function Timer() {
             <div className="element">{time?.minutes} mins </div>
             <div className="element">{time?.seconds} secs </div>
           </div>
+          <div>{renderImage()}</div>
+          <div className="notes">{renderNotes()}</div>
         </>
       ) : (
         <div>

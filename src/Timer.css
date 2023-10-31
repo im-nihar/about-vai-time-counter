@@ -14,12 +14,7 @@
 }
 
 .main-container {
-  /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap; */
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
-  /* margin: 0 60px; */
 }
 
 .element {
@@ -28,12 +23,28 @@
   padding: 10px 0;
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.fit-picture {
+  object-fit: scale-down;
+  width: 250px;
+  height: 250px;
+  border-radius: 40px;
+  cursor: not-allowed;
+}
+
 @media screen and (min-width: 90ch) {
   .main-container {
     margin: 0 60px;
     display: flex;
   }
   h1 {
+    margin: 0 60px;
+  }
+  .notes {
     margin: 0 60px;
   }
 }
