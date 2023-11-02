@@ -39,11 +39,12 @@ export default function Timer() {
     let years = currentYear - initialYear;
     let months = currentMonth - initialMonth;
 
+    months = Math.floor(weeks / 4);
+
     if (months < 0) {
       years--;
       months += 12;
     }
-
     // console.log(
     //   `Time passed since ${initialDate.toDateString()} ${initialDate.toLocaleTimeString()}:`
     // );
@@ -150,7 +151,7 @@ export default function Timer() {
             {time?.years > 0 && (
               <div className="element">{time?.years} years </div>
             )}
-            {/* <div className="element">{time?.months} months </div> */}
+            <div className="element">{time?.months} months </div>
             {time?.weeks > 0 && (
               <div className="element">{time?.weeks} weeks </div>
             )}
