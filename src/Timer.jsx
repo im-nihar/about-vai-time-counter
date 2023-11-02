@@ -62,7 +62,7 @@ export default function Timer() {
     });
     let titleString = "";
     if (time) {
-      titleString = `Since you left ${years}Y ${months}M ${weeks}W ${days}D ${remainingHours}H ${remainingMinutes}M ${remainingSeconds}S `;
+      titleString = `Since you left ${years}Y ${weeks}W ${days}D ${remainingHours}H ${remainingMinutes}M ${remainingSeconds}S `;
     }
 
     document.title = titleString;
@@ -150,7 +150,7 @@ export default function Timer() {
             {time?.years > 0 && (
               <div className="element">{time?.years} years </div>
             )}
-            <div className="element">{time?.months} months </div>
+            {/* <div className="element">{time?.months} months </div> */}
             {time?.weeks > 0 && (
               <div className="element">{time?.weeks} weeks </div>
             )}
