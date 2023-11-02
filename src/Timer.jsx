@@ -150,7 +150,7 @@ export default function Timer() {
             {time?.years > 0 && (
               <div className="element">{time?.years} years </div>
             )}
-            <div className="element">{time?.months} months </div>
+            {/* <div className="element">{time?.months} months </div> */}
             {time?.weeks > 0 && (
               <div className="element">{time?.weeks} weeks </div>
             )}
